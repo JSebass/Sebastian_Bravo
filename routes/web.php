@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\InformacionController;
+use App\Http\Controllers\ProductosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[InformacionController::class, 'index']);
+Route::get('/informacion/mision_y_vision',[InformacionController::class, 'mision']);
+Route::get('/informacion/contactos',[InformacionController::class, 'contactos']);
+Route::get('/productos/perros',[ProductosController::class, 'perros']);
+
